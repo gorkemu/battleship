@@ -20,7 +20,7 @@ describe("attack", () => {
 
   test("a random cell should be shot with random attack", () => {
     player.randomAttack(enemyBoard);
-    let shotSpots = enemyBoard.board.filter((spot) => spot.isShot === true);
+    const shotSpots = enemyBoard.board.filter((spot) => spot.isShot === true);
     expect(shotSpots.length).toBe(1);
   });
 

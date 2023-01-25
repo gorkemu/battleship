@@ -29,8 +29,8 @@ describe("place ship in x axis", () => {
   });
 
   test("other spots should not be occupied", () => {
-    expect(testBoard.board[5].isOccupied).toBe(false);
-    expect(testBoard.board[5].ship).toBe(null);
+    const shotSpots = testBoard.board.filter((spot) => spot.isOccupied === true);
+    expect(shotSpots.length).toBe(4);
   });
 });
 
@@ -57,10 +57,33 @@ describe("place ship in y axis", () => {
   });
 
   test("other spots should not be occupied", () => {
-    expect(testBoard.board[32].isOccupied).toBe(false);
-    expect(testBoard.board[32].ship).toBe(null);
+    const shotSpots = testBoard.board.filter((spot) => spot.isOccupied === true);
+    expect(shotSpots.length).toBe(3);
   });
 });
+
+describe("prevent inappropriate placement", () => {
+  const testBoard = Gameboard();
+  const testShip = Ship(4);
+
+  test("the ship should not extend beyond the game board (x axis)", () => {
+    testBoard.placeShip(testShip, 7, "x");
+    expect(testBoard.board[7].isOccupied).toBe(false);
+  });
+
+  test("the ship should not extend beyond the game board (y axis)", () => {
+    testBoard.placeShip(testShip, 75, "y");
+    expect(testBoard.board[75].isOccupied).toBe(false);
+  });
+
+  test("the ship should not be placed if one or more of the spots for this ship are already occupied", () => {
+    testBoard.placeShip(testShip, 2, "x");
+    const testShip2 = Ship(3);
+    testBoard.placeShip(testShip2, 3, "y");
+    expect(testBoard.board[13].isOccupied).toBe(false);
+  });
+});
+
 
 describe("receive attack", () => {
   let testBoard;

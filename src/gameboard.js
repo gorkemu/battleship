@@ -5,16 +5,33 @@ export const Gameboard = () => {
   }
 
   const placeShip = (ship, startPosition, axis) => {
-    for (let i = 0; i < ship.length; i++) {
-      if (axis === "x") {
+    if (axis === "x" && startPosition % 10 + ship.length <= 10) {
+      for (let i = 0; i < ship.length; i++) {
+        if (board[startPosition + i].isOccupied === true) {
+          console.log("One or more of the spots for this ship are already occupied. Ship placement failed.")
+          return;
+        }
+      }
+      for (let i = 0; i < ship.length; i++) {
         board[startPosition + i].ship = ship;
         board[startPosition + i].isOccupied = true;
-      } else {
+      };
+    };
+
+    if (axis === "y" && Math.floor(startPosition / 10) % 10 + ship.length <= 10) {
+      for (let i = 0; i < ship.length; i++) {
+        if (board[startPosition + i * 10].isOccupied === true) {
+          console.log("One or more of the spots for this ship are already occupied. Ship placement failed.")
+          return;
+        }
+      }
+      for (let i = 0; i < ship.length; i++) {
         board[startPosition + i * 10].ship = ship;
         board[startPosition + i * 10].isOccupied = true;
-      }
-    }
+      };
+    };
   };
+
 
   const receiveAttack = (position) => {
     if (board[position].isOccupied) {
