@@ -8,27 +8,27 @@ describe("place ship in x axis", () => {
     testBoard.placeShip(testShip, 6, "x");
   });
 
-  test("first cell should be occupied", () => {
+  test("first spot should be occupied", () => {
     expect(testBoard.board[6].isOccupied).toBe(true);
     expect(testBoard.board[6].ship).toBe(testShip);
   });
 
-  test("second cell should be occupied", () => {
+  test("second spot should be occupied", () => {
     expect(testBoard.board[7].isOccupied).toBe(true);
     expect(testBoard.board[7].ship).toBe(testShip);
   });
 
-  test("third cell should be occupied", () => {
+  test("third spot should be occupied", () => {
     expect(testBoard.board[8].isOccupied).toBe(true);
     expect(testBoard.board[8].ship).toBe(testShip);
   });
 
-  test("fourth cell should be occupied", () => {
+  test("fourth spot should be occupied", () => {
     expect(testBoard.board[9].isOccupied).toBe(true);
     expect(testBoard.board[9].ship).toBe(testShip);
   });
 
-  test("other cells should not be occupied", () => {
+  test("other spots should not be occupied", () => {
     expect(testBoard.board[5].isOccupied).toBe(false);
     expect(testBoard.board[5].ship).toBe(null);
   });
@@ -41,22 +41,22 @@ describe("place ship in y axis", () => {
     testBoard.placeShip(testShip, 2, "y");
   });
 
-  test("first cell should be occupied", () => {
+  test("first spot should be occupied", () => {
     expect(testBoard.board[2].isOccupied).toBe(true);
     expect(testBoard.board[2].ship).toBe(testShip);
   });
 
-  test("second cell should be occupied", () => {
+  test("second spot should be occupied", () => {
     expect(testBoard.board[12].isOccupied).toBe(true);
     expect(testBoard.board[12].ship).toBe(testShip);
   });
 
-  test("third cell should be occupied", () => {
+  test("third spot should be occupied", () => {
     expect(testBoard.board[22].isOccupied).toBe(true);
     expect(testBoard.board[22].ship).toBe(testShip);
   });
 
-  test("other cells should not be occupied", () => {
+  test("other spots should not be occupied", () => {
     expect(testBoard.board[32].isOccupied).toBe(false);
     expect(testBoard.board[32].ship).toBe(null);
   });
@@ -76,16 +76,16 @@ describe("receive attack", () => {
     expect(testShip.getHits()).toBe(1);
   });
 
-  test("cell should be shot after attack", () => {
+  test("spot should be shot after attack", () => {
     testBoard.receiveAttack(7);
     expect(testBoard.board[7].isShot).toBe(true);
   });
-    
-  test("another cell should not be shot", () => {
+
+  test("another spot should not be shot", () => {
     testBoard.receiveAttack(7);
     expect(testBoard.board[8].isShot).toBe(false);
   });
-    
+
   test("not sink ship after 3 attacks", () => {
     testBoard.receiveAttack(6);
     testBoard.receiveAttack(7);
@@ -111,14 +111,14 @@ describe("game over", () => {
     testBoard.placeShip(testShip, 6, "x");
   });
 
-  test("not game over if not all ships are sinked", () => {
+  test("not game over if not all ships are sunk", () => {
     testBoard.receiveAttack(6);
     testBoard.receiveAttack(7);
     testBoard.receiveAttack(8);
     expect(testBoard.isGameOver()).toBe(false);
   });
 
-  test("game over when all ships are sinked", () => {
+  test("game over when all ships are sunk", () => {
     testBoard.receiveAttack(6);
     testBoard.receiveAttack(7);
     testBoard.receiveAttack(8);

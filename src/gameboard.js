@@ -4,14 +4,14 @@ export const Gameboard = () => {
     board.push({ ship: null, isOccupied: false, isShot: false });
   }
 
-  const placeShip = (ship, position, axis) => {
+  const placeShip = (ship, startPosition, axis) => {
     for (let i = 0; i < ship.length; i++) {
       if (axis === "x") {
-        board[position + i].ship = ship;
-        board[position + i].isOccupied = true;
+        board[startPosition + i].ship = ship;
+        board[startPosition + i].isOccupied = true;
       } else {
-        board[position + i * 10].ship = ship;
-        board[position + i * 10].isOccupied = true;
+        board[startPosition + i * 10].ship = ship;
+        board[startPosition + i * 10].isOccupied = true;
       }
     }
   };
