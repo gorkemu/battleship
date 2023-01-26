@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+
+:root {
+  --navy: #00425a;
+  --teal: #1f8a70;
+  --green: #bfdb38;
+  --orange: #fc7300;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  height: 80vh;
+}
+
+header,
+main,
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header,
+footer {
+  height: 10vh;
+  background-color: var(--navy);
+  color: var(--green);
+}
+
+header {
+  color: var(--green);
+  font-size: x-large;
+}
+
+main {
+  background-color: var(--teal);
+}
+
+#boards {
+  width: 80%;
+  height: 80%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+}
+
+#player-board,
+#ai-board {
+  width: 350px;
+  height: 350px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  border-collapse: collapse;
+}
+
+.cell {
+  border: 1px solid var(--green);
+  background-color: var(--navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-cell-ship {
+  background-color: aqua;
+}
+
+.hit-ship {
+  background-color: red;
+}
+
+.miss {
+  background-color: white;
+}

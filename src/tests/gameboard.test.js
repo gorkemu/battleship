@@ -29,7 +29,9 @@ describe("place ship in x axis", () => {
   });
 
   test("other spots should not be occupied", () => {
-    const shotSpots = testBoard.board.filter((spot) => spot.isOccupied === true);
+    const shotSpots = testBoard.board.filter(
+      (spot) => spot.isOccupied === true
+    );
     expect(shotSpots.length).toBe(4);
   });
 });
@@ -57,7 +59,9 @@ describe("place ship in y axis", () => {
   });
 
   test("other spots should not be occupied", () => {
-    const shotSpots = testBoard.board.filter((spot) => spot.isOccupied === true);
+    const shotSpots = testBoard.board.filter(
+      (spot) => spot.isOccupied === true
+    );
     expect(shotSpots.length).toBe(3);
   });
 });
@@ -84,7 +88,6 @@ describe("prevent inappropriate placement", () => {
   });
 });
 
-
 describe("receive attack", () => {
   let testBoard;
   let testShip;
@@ -96,7 +99,7 @@ describe("receive attack", () => {
 
   test("increment hits after attack", () => {
     testBoard.receiveAttack(7);
-    expect(testShip.getHits()).toBe(1);
+    expect(testShip.hits).toBe(1);
   });
 
   test("spot should be shot after attack", () => {
@@ -138,7 +141,7 @@ describe("game over", () => {
     testBoard.receiveAttack(6);
     testBoard.receiveAttack(7);
     testBoard.receiveAttack(8);
-    expect(testBoard.isGameOver()).toBe(false);
+    expect(testBoard.isAllSunk()).toBe(false);
   });
 
   test("game over when all ships are sunk", () => {
@@ -146,6 +149,6 @@ describe("game over", () => {
     testBoard.receiveAttack(7);
     testBoard.receiveAttack(8);
     testBoard.receiveAttack(9);
-    expect(testBoard.isGameOver()).toBe(true);
+    expect(testBoard.isAllSunk()).toBe(true);
   });
 });

@@ -12,7 +12,7 @@ describe("Ship factory function", () => {
 
   test("increment hits after hit", () => {
     testShip.hit();
-    expect(testShip.getHits()).toBe(1);
+    expect(testShip.hits).toBe(1);
   });
 
   test("should not sink after 3 hits", () => {

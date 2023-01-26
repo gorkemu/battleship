@@ -1,1 +1,3 @@
-console.log("webpack test");
+import { renderBoards } from "./dom";
+
+renderBoards();

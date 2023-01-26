@@ -26,7 +26,7 @@ describe("attack", () => {
 
   test("enemy ship should be hit with attack on it", () => {
     player.attack(enemyBoard, 6);
-    expect(enemyShip.getHits()).toBe(1);
+    expect(enemyShip.hits).toBe(1);
   });
 
   test("sink ship after 4 attacks", () => {
@@ -42,6 +42,6 @@ describe("attack", () => {
     player.attack(enemyBoard, 7);
     player.attack(enemyBoard, 8);
     player.attack(enemyBoard, 9);
-    expect(enemyBoard.isGameOver()).toBe(true);
+    expect(enemyBoard.isAllSunk()).toBe(true);
   });
 });

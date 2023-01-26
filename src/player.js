@@ -1,6 +1,9 @@
-import { Gameboard } from "./gameboard";
+export const Player = () => {
+  let isTurn = false;
+  const changeTurn = () => {
+    isTurn = !isTurn;
+  };
 
-export const Player = (name) => {
   const attack = (gameboard, position) => {
     if (!gameboard.board[position].isShot) {
       gameboard.receiveAttack(position);
@@ -16,5 +19,12 @@ export const Player = (name) => {
     gameboard.receiveAttack(randomNum);
   };
 
-  return { name, attack, randomAttack };
+  return {
+    get isTurn() {
+      return isTurn;
+    },
+    changeTurn,
+    attack,
+    randomAttack,
+  };
 };

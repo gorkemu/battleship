@@ -5,13 +5,18 @@ export const Ship = (length) => {
     hits++;
   };
 
-  const getHits = () => {
-    return hits;
-  };
-
   const isSunk = () => {
     return hits >= length;
   };
 
-  return { length, hit, isSunk, getHits };
+  return {
+    get length() {
+      return length;
+    },
+    get hits() {
+      return hits;
+    },
+    hit,
+    isSunk,
+  };
 };
