@@ -77,6 +77,5 @@ export const Gameboard = () => {
     placeShipRandomly,
     receiveAttack,
     isAllSunk,
-    validatePlacement,
   };
 };
