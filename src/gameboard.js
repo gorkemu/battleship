@@ -56,13 +56,13 @@ export const Gameboard = () => {
 
   const receiveAttack = (position) => {
     board[position].isShot = true;
+    let attackResult = "miss";
     if (board[position].isOccupied) {
       board[position].ship.hit();
-      return "hit";
+      attackResult = "hit";
     }
-    return "miss";
+    return attackResult;
   };
-
 
   const isAllSunk = () => {
     const occupiedSpots = board.filter((spot) => spot.ship !== null);

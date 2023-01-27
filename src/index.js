@@ -1,3 +1,3 @@
-import { renderBoards } from "./dom";
+import { renderBoards } from "./app";
 
 renderBoards();

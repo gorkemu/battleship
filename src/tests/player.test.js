@@ -1,13 +1,19 @@
 import { Player } from "../player";
+import { AI } from "../player";
 import { Gameboard } from "../gameboard";
 import { Ship } from "../ship";
+import { Game } from "../game";
 
 describe("attack", () => {
   let player;
+  let ai;
+  let playerBoard;
   let enemyBoard;
   let enemyShip;
   beforeEach(() => {
     player = Player("Test Player");
+    ai = AI("AI");
+    playerBoard = Gameboard();
     enemyBoard = Gameboard();
     enemyShip = Ship(4);
     enemyBoard.placeShip(enemyShip, 6, "x");
@@ -19,8 +25,8 @@ describe("attack", () => {
   });
 
   test("a random cell should be shot with random attack", () => {
-    player.randomAttack(enemyBoard);
-    const shotSpots = enemyBoard.board.filter((spot) => spot.isShot === true);
+    ai.randomAttack(playerBoard);
+    const shotSpots = playerBoard.board.filter((spot) => spot.isShot === true);
     expect(shotSpots.length).toBe(1);
   });
 

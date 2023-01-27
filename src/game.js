@@ -1,13 +1,15 @@
 import { Gameboard } from "./gameboard";
 import { Player } from "./player";
+import { AI } from "./player";
 import { Ship } from "./ship";
 
 export const Game = () => {
+  let currentPlayer;
+  const player = Player();
+  const ai = AI();
 
   const startNewGame = () => {
-    const player = Player();
-    const ai = Player();
-
+    currentPlayer = player;
     const playerBoard = Gameboard();
     const aiBoard = Gameboard();
 
@@ -29,8 +31,8 @@ export const Game = () => {
 
     return { player, ai, playerBoard, aiBoard };
   };
-    
-    return {
-        startNewGame,
-    };
+
+  return {
+    startNewGame,
+  };
 };
