@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Syne+Mono&display=swap");
 
 :root {
   --navy: #00425a;
@@ -22,7 +22,7 @@ body {
 }
 
 body {
-  font-family: "Nunito", sans-serif;
+  font-family: "Syne Mono", monospace;
   display: flex;
   flex-direction: column;
 }
@@ -48,30 +48,54 @@ footer {
 
 header {
   color: var(--green);
-  font-size: x-large;
+  font-size: xx-large;
+  text-transform: uppercase;
 }
 
 main {
   background-color: var(--teal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #boards {
-  width: 80%;
-  height: 80%;
+  width: 100%;
+  height: 100%;
   display: grid;
   place-items: center;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: 1fr;
+  margin-bottom: 20px;
 }
 
 #player-board,
 #ai-board {
-  width: 350px;
-  height: 350px;
+  width: 40vw;
+  height: 40vw;
+  max-width: 400px;
+  max-height: 400px;
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   border-collapse: collapse;
+}
+
+#boards::before {
+  content: "Player";
+  grid-column: 1;
+  grid-row: 1;
+  text-align: center;
+  font-size: 20px;
+}
+
+#boards::after {
+  content: "AI";
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
+  font-size: 20px;
 }
 
 .cell {
@@ -100,7 +124,69 @@ footer a {
 }
 
 footer img {
-  width: 20px;
+  width: 25px;
   margin-right: 5px;
   vertical-align: middle;
+}
+
+#modal {
+  /* display: none; */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  max-width: 400px;
+  height: 30%;
+  max-height: 300px;
+  background-color: #e6e2e2;
+  box-shadow: 0px 0px 10px #00000033;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+}
+
+#modal-content {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#modal-footer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+#modal-footer button {
+  background-color: var(--navy);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+}
+
+#modal-footer button:hover {
+  background-color: var(--teal);
+}
+
+.close-btn {
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  font-size: 30px;
+  color: #000;
+  cursor: pointer;
 }
