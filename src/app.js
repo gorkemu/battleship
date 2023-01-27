@@ -41,12 +41,21 @@ export function renderBoards() {
       const attackResult = aiBoard.receiveAttack(i);
       if (attackResult === "hit") {
         cell.classList.add("hit-ship");
+        if (aiBoard.isAllSunk()) {
+          gameOver("You");
+          return;
+        }
       } else if (attackResult === "miss") {
         cell.classList.add("miss");
       }
+
       setTimeout(() => {
         const randomNum = ai.randomAttack(playerBoard);
         handleAIAttack(randomNum, playerBoard.receiveAttack(randomNum));
+        if (playerBoard.isAllSunk()) {
+          gameOver("AI");
+          return;
+        }
         isPlayerTurn = true;
       }, 1000);
     });
@@ -62,3 +71,23 @@ function handleAIAttack(index, attackResult) {
     cell.classList.add("miss");
   }
 }
+
+function gameOver(player) {
+  const modal = document.querySelector("#modal");
+  modal.style.display = "block";
+  const message = document.querySelector("#modal-content");
+  message.textContent = `Game Over! ${player} won!`;
+}
+
+const startAgainBtn = document.querySelector(".start-again-btn");
+startAgainBtn.addEventListener("click", () => {
+  const modal = document.querySelector(".modal");
+  modal.style.display = "none";
+  //Start a new game
+});
+
+const closeBtn = document.querySelector(".close-btn");
+closeBtn.addEventListener("click", function () {
+  const modal = document.querySelector(".modal");
+  modal.style.display = "none";
+});
