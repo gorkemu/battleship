@@ -93,3 +93,14 @@ main {
 .miss {
   background-color: white;
 }
+
+footer a {
+  color: var(--green);
+  text-decoration: none;
+}
+
+footer img {
+  width: 20px;
+  margin-right: 5px;
+  vertical-align: middle;
+}
