@@ -17,7 +17,7 @@ export function renderBoards() {
     cell.classList.add("cell");
     if (playerBoard.board[i].isOccupied) {
       cell.classList.add("player-cell-ship");
-    } 
+    }
     playerBoardDom.appendChild(cell);
   }
 
@@ -48,7 +48,7 @@ export function renderBoards() {
       } else if (attackResult === "miss") {
         cell.classList.add("miss");
       }
-      
+
       setTimeout(() => {
         const randomNum = ai.randomAttack(playerBoard);
         handleAIAttack(randomNum, playerBoard.receiveAttack(randomNum));
@@ -57,7 +57,7 @@ export function renderBoards() {
           return;
         }
         isPlayerTurn = true;
-      }, 3000);
+      }, 1000);
     });
     aiBoardDom.appendChild(cell);
   }
@@ -73,21 +73,21 @@ function handleAIAttack(index, attackResult) {
 }
 
 function gameOver(player) {
-  const modal = document.querySelector('#modal');
-  modal.style.display = 'block';
-  const message = document.querySelector("#modal-content");
-  message.textContent = `Game Over! ${player} won!`
+  const gameOverModal = document.querySelector("#game-over-modal");
+  gameOverModal.style.display = "block";
+  const message = document.querySelector("#game-over-modal-content");
+  message.textContent = `Game Over! ${player} won!`;
 }
 
-const startAgainBtn = document.querySelector('.start-again-btn');
+const startAgainBtn = document.querySelector(".start-again-btn");
 startAgainBtn.addEventListener("click", () => {
-  const modal = document.querySelector('.modal');
-  modal.style.display = 'none';
-  //Start a new game
-})
+  const gameOverModal = document.querySelector("#game-over-modal");
+  gameOverModal.style.display = "none";
+  location.reload();
+});
 
-const closeBtn = document.querySelector('.close-btn');
-closeBtn.addEventListener('click', function () {
-  const modal = document.querySelector('.modal');
-  modal.style.display = 'none';
+const closeBtn = document.querySelector(".close-btn");
+closeBtn.addEventListener("click", function () {
+  const gameOverModal = document.querySelector("#game-over-modal");
+  gameOverModal.style.display = "none";
 });
