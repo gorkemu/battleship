@@ -55,6 +55,7 @@ export const AI = () => {
       if (tile.isShot && tile.ship && !tile.ship.isSunk()) {
         if (
           i - 1 >= 0 &&
+          i % 10 !== 0 &&
           !gameboard.board[i - 1].isShot &&
           !cleverTargets.includes(i - 1)
         ) {
@@ -62,6 +63,7 @@ export const AI = () => {
         }
         if (
           i + 1 < 100 &&
+          i % 10 !== 9 &&
           !gameboard.board[i + 1].isShot &&
           !cleverTargets.includes(i + 1)
         ) {
@@ -83,7 +85,7 @@ export const AI = () => {
         }
       }
     });
-
+      
     let randomNum =
       cleverTargets[Math.floor(Math.random() * cleverTargets.length)];
     while (
@@ -95,6 +97,8 @@ export const AI = () => {
     }
     previousAttacks.push(randomNum);
     const attackResult = gameboard.receiveAttack(randomNum);
+    
+    cleverTargets = cleverTargets.filter((val) => val !== randomNum);
     return {
       randomNum,
       attackResult,

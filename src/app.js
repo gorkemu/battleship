@@ -8,6 +8,8 @@ const aiBoard = game.aiBoard;
 let isPlayerTurn = true;
 
 export function renderBoards() {
+  const boards = document.getElementById("boards");
+  boards.style.visibility = "visible";
   const playerBoardDom = document.getElementById("player-board");
   const aiBoardDom = document.getElementById("ai-board");
 
@@ -25,6 +27,7 @@ export function renderBoards() {
     let cell = document.createElement("div");
     cell.setAttribute("id", `ai-cell-${i}`);
     cell.classList.add("cell");
+    cell.classList.add("ai-cell");
     if (aiBoard.board[i].isOccupied) {
       cell.classList.add("ai-cell-ship");
     }
@@ -48,8 +51,9 @@ export function renderBoards() {
       }
 
       setTimeout(() => {
-        const aiAttackResult = ai.attack(playerBoard); 
+        const aiAttackResult = ai.attack(playerBoard);
         handleAIAttack(aiAttackResult.randomNum, aiAttackResult.attackResult);
+        
         if (playerBoard.isAllSunk()) {
           gameOver("AI");
           return;

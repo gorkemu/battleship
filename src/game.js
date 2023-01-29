@@ -13,25 +13,29 @@ export const Game = () => {
     const playerBoard = Gameboard();
     const aiBoard = Gameboard();
 
-    const playerShip1 = Ship(5);
-    const playerShip2 = Ship(4);
-    const playerShip3 = Ship(3);
-    const playerShip4 = Ship(2);
+    const playerCarrier = Ship(5);
+    const playerBattleship = Ship(4);
+    const playerDestroyer = Ship(3);
+    const playerSubmarine = Ship(3);
+    const playerPatrolBoat = Ship(2);
 
-    const aiShip1 = Ship(5);
-    const aiShip2 = Ship(4);
-    const aiShip3 = Ship(3);
-    const aiShip4 = Ship(2);
+    const aiCarrier = Ship(5);
+    const aiBattleship = Ship(4);
+    const aiDestroyer = Ship(3);
+    const aiSubmarine = Ship(3);
+    const aiPatrolBoat = Ship(2);
 
-    playerBoard.placeShipRandomly(playerShip1);
-    playerBoard.placeShipRandomly(playerShip2);
-    playerBoard.placeShipRandomly(playerShip3);
-    playerBoard.placeShipRandomly(playerShip4);
+    playerBoard.placeShipRandomly(playerCarrier);
+    playerBoard.placeShipRandomly(playerBattleship);
+    playerBoard.placeShipRandomly(playerDestroyer);
+    playerBoard.placeShipRandomly(playerSubmarine);
+    playerBoard.placeShipRandomly(playerPatrolBoat);
 
-    aiBoard.placeShipRandomly(aiShip1);
-    aiBoard.placeShipRandomly(aiShip2);
-    aiBoard.placeShipRandomly(aiShip3);
-    aiBoard.placeShipRandomly(aiShip4);
+    aiBoard.placeShipRandomly(aiCarrier);
+    aiBoard.placeShipRandomly(aiBattleship);
+    aiBoard.placeShipRandomly(aiDestroyer);
+    aiBoard.placeShipRandomly(aiSubmarine);
+    aiBoard.placeShipRandomly(aiPatrolBoat);
 
     return { player, ai, playerBoard, aiBoard };
   };
