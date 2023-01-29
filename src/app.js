@@ -83,9 +83,3 @@ startAgainBtn.addEventListener("click", () => {
   gameOverModal.style.display = "none";
   location.reload();
 });
-
-const closeBtn = document.querySelector(".close-btn");
-closeBtn.addEventListener("click", function () {
-  const gameOverModal = document.querySelector("#game-over-modal");
-  gameOverModal.style.display = "none";
-});
