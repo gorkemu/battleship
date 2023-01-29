@@ -29,6 +29,11 @@ body {
 
 main {
   height: 80vh;
+  background-color: var(--teal);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 header,
@@ -47,17 +52,8 @@ footer {
 }
 
 header {
-  color: var(--green);
   font-size: xx-large;
   text-transform: uppercase;
-}
-
-main {
-  background-color: var(--teal);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 #boards {
@@ -129,68 +125,7 @@ footer img {
   vertical-align: middle;
 }
 
-#game-over-modal {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 50%;
-  max-width: 400px;
-  height: 30%;
-  max-height: 300px;
-  background-color: #e6e2e2;
-  box-shadow: 0px 0px 10px #00000033;
-  border-radius: 10px;
-  padding: 20px;
-  overflow: hidden;
-}
-
-#game-over-modal-content {
-  width: 100%;
-  text-align: center;
-  font-size: 1.5em;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#game-over-modal-footer {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-}
-
-#game-over-modal-footer button {
-  background-color: var(--navy);
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  font-family: inherit;
-}
-
-#game-over-modal-footer button:hover {
-  background-color: var(--teal);
-}
-
-.close-btn {
-  position: absolute;
-  top: -5px;
-  right: 10px;
-  font-size: 30px;
-  color: #000;
-  cursor: pointer;
-}
-
+#game-over-modal,
 #start-game-modal {
   position: fixed;
   top: 50%;
@@ -207,6 +142,11 @@ footer img {
   overflow: hidden;
 }
 
+#game-over-modal {
+  display: none;
+}
+
+#game-over-modal-content,
 #start-game-modal-content {
   width: 100%;
   text-align: center;
@@ -217,6 +157,7 @@ footer img {
   transform: translate(-50%, -50%);
 }
 
+#game-over-modal-footer,
 #start-game-modal-footer {
   display: flex;
   justify-content: center;
@@ -227,6 +168,7 @@ footer img {
   width: 100%;
 }
 
+#game-over-modal-footer button,
 #start-game-modal-footer button {
   background-color: var(--navy);
   color: #fff;
@@ -239,6 +181,7 @@ footer img {
   font-family: inherit;
 }
 
+#game-over-modal-footer button:hover,
 #start-game-modal-footer button:hover {
   background-color: var(--teal);
 }
