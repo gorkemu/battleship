@@ -1,4 +1,5 @@
 import { Game } from "./game";
+
 const game = Game().startNewGame();
 const player = game.player;
 const ai = game.ai;
@@ -10,7 +11,6 @@ export function renderBoards() {
   const playerBoardDom = document.getElementById("player-board");
   const aiBoardDom = document.getElementById("ai-board");
 
-  //player's board
   for (let i = 0; i < 100; i++) {
     let cell = document.createElement("div");
     cell.setAttribute("id", `player-cell-${i}`);
@@ -21,14 +21,13 @@ export function renderBoards() {
     playerBoardDom.appendChild(cell);
   }
 
-  //ai's board
   for (let i = 0; i < 100; i++) {
     let cell = document.createElement("div");
+    cell.setAttribute("id", `ai-cell-${i}`);
     cell.classList.add("cell");
     if (aiBoard.board[i].isOccupied) {
       cell.classList.add("ai-cell-ship");
     }
-    //add event listener to click attack
     cell.addEventListener("click", () => {
       if (!isPlayerTurn) {
         return;
@@ -37,21 +36,20 @@ export function renderBoards() {
         return;
       }
       isPlayerTurn = false;
-      player.previousAttacks.push(i);
-      const attackResult = aiBoard.receiveAttack(i);
-      if (attackResult === "hit") {
+      const playerAttackResult = player.attack(aiBoard, i);
+      if (playerAttackResult === "hit") {
         cell.classList.add("hit-ship");
         if (aiBoard.isAllSunk()) {
           gameOver("You");
           return;
         }
-      } else if (attackResult === "miss") {
+      } else if (playerAttackResult === "miss") {
         cell.classList.add("miss");
       }
 
       setTimeout(() => {
-        const randomNum = ai.randomAttack(playerBoard);
-        handleAIAttack(randomNum, playerBoard.receiveAttack(randomNum));
+        const aiAttackResult = ai.attack(playerBoard); 
+        handleAIAttack(aiAttackResult.randomNum, aiAttackResult.attackResult);
         if (playerBoard.isAllSunk()) {
           gameOver("AI");
           return;

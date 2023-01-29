@@ -10,11 +10,11 @@ export const Ship = (length) => {
   };
 
   return {
-    get length() {
-      return length;
-    },
     get hits() {
       return hits;
+    },
+    get length() {
+      return length;
     },
     hit,
     isSunk,

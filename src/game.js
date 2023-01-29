@@ -23,15 +23,15 @@ export const Game = () => {
     const aiShip3 = Ship(3);
     const aiShip4 = Ship(2);
 
-    playerBoard.placeShipRandomly(aiShip1);
-    playerBoard.placeShipRandomly(aiShip2);
-    playerBoard.placeShipRandomly(aiShip3);
-    playerBoard.placeShipRandomly(aiShip4);
+    playerBoard.placeShipRandomly(playerShip1);
+    playerBoard.placeShipRandomly(playerShip2);
+    playerBoard.placeShipRandomly(playerShip3);
+    playerBoard.placeShipRandomly(playerShip4);
 
-    aiBoard.placeShipRandomly(playerShip1);
-    aiBoard.placeShipRandomly(playerShip2);
-    aiBoard.placeShipRandomly(playerShip3);
-    aiBoard.placeShipRandomly(playerShip4);
+    aiBoard.placeShipRandomly(aiShip1);
+    aiBoard.placeShipRandomly(aiShip2);
+    aiBoard.placeShipRandomly(aiShip3);
+    aiBoard.placeShipRandomly(aiShip4);
 
     return { player, ai, playerBoard, aiBoard };
   };
