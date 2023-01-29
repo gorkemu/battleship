@@ -1,42 +1,38 @@
 import { Gameboard } from "../gameboard";
 import { Ship } from "../ship";
 
-describe("place ship in x axis", () => {
+describe("place ship horizontally", () => {
   const testBoard = Gameboard();
-  const testShip = Ship(4);
+  const testShip = Ship(2);
   beforeEach(() => {
     testBoard.placeShip(testShip, 6, "x");
   });
 
   test("first spot should be occupied", () => {
     expect(testBoard.board[6].isOccupied).toBe(true);
+  });
+
+  test("first spot should now have that ship", () => {
     expect(testBoard.board[6].ship).toBe(testShip);
   });
 
   test("second spot should be occupied", () => {
     expect(testBoard.board[7].isOccupied).toBe(true);
+  });
+
+  test("second spot should now have that ship", () => {
     expect(testBoard.board[7].ship).toBe(testShip);
-  });
-
-  test("third spot should be occupied", () => {
-    expect(testBoard.board[8].isOccupied).toBe(true);
-    expect(testBoard.board[8].ship).toBe(testShip);
-  });
-
-  test("fourth spot should be occupied", () => {
-    expect(testBoard.board[9].isOccupied).toBe(true);
-    expect(testBoard.board[9].ship).toBe(testShip);
   });
 
   test("other spots should not be occupied", () => {
     const shotSpots = testBoard.board.filter(
       (spot) => spot.isOccupied === true
     );
-    expect(shotSpots.length).toBe(4);
+    expect(shotSpots.length).toBe(2);
   });
 });
 
-describe("place ship in y axis", () => {
+describe("place ship vertically", () => {
   const testBoard = Gameboard();
   const testShip = Ship(3);
   beforeEach(() => {
@@ -45,16 +41,25 @@ describe("place ship in y axis", () => {
 
   test("first spot should be occupied", () => {
     expect(testBoard.board[2].isOccupied).toBe(true);
+  });
+
+  test("first spot should now have that ship", () => {
     expect(testBoard.board[2].ship).toBe(testShip);
   });
 
   test("second spot should be occupied", () => {
     expect(testBoard.board[12].isOccupied).toBe(true);
+  });
+
+  test("second spot should now have that ship", () => {
     expect(testBoard.board[12].ship).toBe(testShip);
   });
 
   test("third spot should be occupied", () => {
     expect(testBoard.board[22].isOccupied).toBe(true);
+  });
+
+  test("third spot should now have that ship", () => {
     expect(testBoard.board[22].ship).toBe(testShip);
   });
 
@@ -130,25 +135,35 @@ describe("receive attack", () => {
 
 describe("game over", () => {
   let testBoard;
-  let testShip;
+  let testShip1;
+  let testShip2;
   beforeEach(() => {
     testBoard = Gameboard();
-    testShip = Ship(4);
-    testBoard.placeShip(testShip, 6, "x");
+    testShip1 = Ship(4);
+    testShip2 = Ship(3);
+    testBoard.placeShip(testShip1, 6, "x");
+    testBoard.placeShip(testShip2, 16, "x");
   });
 
-  test("not game over if not all ships are sunk", () => {
+  test("isAllSunk should return false if not all ships are sunk", () => {
     testBoard.receiveAttack(6);
     testBoard.receiveAttack(7);
     testBoard.receiveAttack(8);
+    testBoard.receiveAttack(16);
+    testBoard.receiveAttack(17);
+    testBoard.receiveAttack(18);
     expect(testBoard.isAllSunk()).toBe(false);
   });
 
-  test("game over when all ships are sunk", () => {
+  test("isAllSunk should return true when all ships are sunk", () => {
     testBoard.receiveAttack(6);
     testBoard.receiveAttack(7);
     testBoard.receiveAttack(8);
     testBoard.receiveAttack(9);
+    testBoard.receiveAttack(16);
+    testBoard.receiveAttack(17);
+    testBoard.receiveAttack(18);
+    testBoard.receiveAttack(19);
     expect(testBoard.isAllSunk()).toBe(true);
   });
 });
