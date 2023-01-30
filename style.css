@@ -242,8 +242,8 @@ input[type="number"] {
   border-collapse: collapse;
 
   position: fixed;
-    top: 50%;
-    left: 25%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
 }
