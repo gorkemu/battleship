@@ -24,78 +24,84 @@
       </div>
     </div>
 
-    <div id="start-random-game-modal" class="modal">
-      <div id="start-random-game-modal-content" class="modal-content">
+    <div id="start-game-modal" class="modal">
+      <div id="start-game-modal-content" class="modal-content">
         Place ships or start a random game
       </div>
-      <div id="start-random-game-modal-footer" class="modal-footer">
-        <button class="place-ships-btn">Place Ships</button>
-        <button class="start-random-btn">Start Random Game</button>
+      <div id="start-game-modal-footer" class="modal-footer">
+        <button id="place-ships-btn">Place Ships</button>
+        <button id="start-random-btn">Start Random Game</button>
       </div>
     </div>
 
-    <div id="place-ships-modal" class="modal">
-      <div id="place-ships-modal-content" class="modal-content">
-        Choose starting points and axis
+    <div id="place-carrier-modal" class="modal">
+      <div id="place-carrier-modal-content" class="modal-content">
+        Select a starting point for your Carrier
       </div>
-      <form id="place-ships-form">
-        <label for="carrier" id="carrier-label">Carrier</label>
-        <input type="number" name="carrier" id="carrier-starting-point" />
-        <input type="radio" name="carrier-axis" id="carrier-x" value="x" />
-        <label for="carrier-x">Horizontal</label>
-        <input type="radio" name="carrier-axis" id="y" value="y" />
-        <label for="carrier-y">Vertical</label>
+      <label for="vertical-carrier">Vertical</label>
+      <input type="checkbox" name="vertical-carrier" id="vertical-carrier" />
+      <div id="place-carrier-modal-footer" class="modal-footer">
+        <button id="carrier-next-btn">Next</button>
+      </div>
+    </div>
 
-        <label for="battleship">Battleship</label>
-        <input type="number" name="battleship" id="battleship" />
-        <input
-          type="radio"
-          name="battleship-axis"
-          id="battleship-x"
-          value="x"
-        />
-        <label for="battleship-x">Horizontal</label>
-        <input
-          type="radio"
-          name="battleship-axis"
-          id="battleship-y"
-          value="y"
-        />
-        <label for="battleship-y">Vertical</label>
+    <div id="place-battleship-modal" class="modal">
+      <div id="place-battleship-modal-content" class="modal-content">
+        Select a starting point for your Battleship
+      </div>
+      <label for="vertical-battleship">Vertical</label>
+      <input
+        type="checkbox"
+        name="vertical-battleship"
+        id="vertical-battleship"
+      />
+      <div id="place-battleship-modal-footer" class="modal-footer">
+        <button id="battleship-next-btn">Next</button>
+      </div>
+    </div>
 
-        <label for="destroyer">Destroyer</label>
-        <input type="number" name="destroyer" id="destroyer" />
-        <input type="radio" name="destroyer-axis" id="destroyer-x" value="x" />
-        <label for="destroyer-x">Horizontal</label>
-        <input type="radio" name="destroyer-axis" id="destroyer-y" value="y" />
-        <label for="destroyer-y">Vertical</label>
+    <div id="place-destroyer-modal" class="modal">
+      <div id="place-destroyer-modal-content" class="modal-content">
+        Select a starting point for your Destroyer
+      </div>
+      <label for="vertical-destroyer">Vertical</label>
+      <input
+        type="checkbox"
+        name="vertical-destroyer"
+        id="vertical-destroyer"
+      />
+      <div id="place-destroyer-modal-footer" class="modal-footer">
+        <button id="destroyer-next-btn">Next</button>
+      </div>
+    </div>
 
-        <label for="submarine">Submarine</label>
-        <input type="number" name="submarine" id="submarine" />
-        <input type="radio" name="submarine-axis" id="submarine-x" value="x" />
-        <label for="submarine-x">Horizontal</label>
-        <input type="radio" name="submarine-axis" id="submarine-y" value="y" />
-        <label for="submarine-y">Vertical</label>
+    <div id="place-submarine-modal" class="modal">
+      <div id="place-submarine-modal-content" class="modal-content">
+        Select a starting point for your Submarine
+      </div>
+      <label for="vertical-submarine">Vertical</label>
+      <input
+        type="checkbox"
+        name="vertical-submarine"
+        id="vertical-submarine"
+      />
+      <div id="place-submarine-modal-footer" class="modal-footer">
+        <button id="submarine-next-btn">Next</button>
+      </div>
+    </div>
 
-        <label for="patrol-boat">Patrol Boat</label>
-        <input type="number" name="patrol-boat" id="patrol-boat" />
-        <input
-          type="radio"
-          name="patrol-boat-axis"
-          id="patrol-boat-x"
-          value="x"
-        />
-        <label for="patrol-boat-x">Horizontal</label>
-        <input
-          type="radio"
-          name="patrol-boat-axis"
-          id="patrol-boat-y"
-          value="y"
-        />
-        <label for="patrol-boat-y">Vertical</label>
-      </form>
-      <div id="place-ships-modal-footer" class="modal-footer">
-        <button class="start-btn">Start Game</button>
+    <div id="place-patrol-boat-modal" class="modal">
+      <div id="place-patrol-boat-modal-content" class="modal-content">
+        Select a starting point for your Patrol Boat
+      </div>
+      <label for="vertical-patrol-boat">Vertical</label>
+      <input
+        type="checkbox"
+        name="vertical-patrol-boat"
+        id="vertical-patrol-boat"
+      />
+      <div id="place-patrol-boat-modal-footer" class="modal-footer">
+        <button id="start-manual-game-btn">Start Game</button>
       </div>
     </div>
 
