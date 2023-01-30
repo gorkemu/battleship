@@ -53,7 +53,7 @@ export function renderBoards() {
       setTimeout(() => {
         const aiAttackResult = ai.attack(playerBoard);
         handleAIAttack(aiAttackResult.randomNum, aiAttackResult.attackResult);
-        
+
         if (playerBoard.isAllSunk()) {
           gameOver("AI");
           return;

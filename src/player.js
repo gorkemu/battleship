@@ -85,7 +85,7 @@ export const AI = () => {
         }
       }
     });
-      
+
     let randomNum =
       cleverTargets[Math.floor(Math.random() * cleverTargets.length)];
     while (
@@ -97,7 +97,7 @@ export const AI = () => {
     }
     previousAttacks.push(randomNum);
     const attackResult = gameboard.receiveAttack(randomNum);
-    
+
     cleverTargets = cleverTargets.filter((val) => val !== randomNum);
     return {
       randomNum,
