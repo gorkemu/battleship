@@ -73,6 +73,7 @@ export const Gameboard = () => {
     get board() {
       return board;
     },
+
     placeShip,
     placeShipRandomly,
     receiveAttack,

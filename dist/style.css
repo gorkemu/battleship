@@ -145,7 +145,7 @@ footer img {
 }
 
 #game-over-modal,
-#start-random-game-modal {
+#start-game-modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -162,7 +162,33 @@ footer img {
   z-index: 2;
 }
 
-#place-ships-modal {
+#game-over-modal-content,
+#start-game-modal-content {
+  width: 100%;
+  text-align: center;
+  font-size: 1.5em;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#game-over-modal-footer,
+#start-game-modal-footer {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+
+#place-carrier-modal,
+#place-battleship-modal,
+#place-destroyer-modal,
+#place-submarine-modal,
+#place-patrol-boat-modal {
   position: fixed;
   top: 50%;
   left: 67%;
@@ -177,39 +203,22 @@ footer img {
   z-index: 1;
 }
 
-#game-over-modal {
+#game-over-modal,
+#place-carrier-modal,
+#place-battleship-modal,
+#place-destroyer-modal,
+#place-submarine-modal,
+#place-patrol-boat-modal {
   display: none;
-}
-
-#place-ships-modal {
-  display: none;
-}
-
-#game-over-modal-content,
-#start-random-game-modal-content {
-  width: 100%;
-  text-align: center;
-  font-size: 1.5em;
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-#game-over-modal-footer,
-#start-random-game-modal-footer {
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  top: 75%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
 }
 
 #game-over-modal-footer button,
-#start-random-game-modal-footer button,
-#place-ships-modal-footer button {
+#start-game-modal-footer button,
+#place-carrier-modal-footer button,
+#place-battleship-modal-footer button,
+#place-destroyer-modal-footer button,
+#place-submarine-modal-footer button,
+#place-patrol-boat-modal-footer button {
   background-color: var(--navy);
   color: #fff;
   padding: 10px 20px;
@@ -222,13 +231,13 @@ footer img {
 }
 
 #game-over-modal-footer button:hover,
-#start-random-game-modal-footer button:hover,
-#place-ships-modal-footer button:hover {
+#start-game-modal-footer button:hover,
+#place-carrier-modal-footer button:hover,
+#place-battleship-modal-footer button:hover,
+#place-destroyer-modal-footer button:hover,
+#place-submarine-modal-footer button:hover,
+#place-patrol-boat-modal-footer button:hover {
   background-color: var(--teal);
-}
-
-input[type="number"] {
-  width: 50px;
 }
 
 #board-map-modal {
@@ -240,7 +249,6 @@ input[type="number"] {
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(10, 1fr);
   border-collapse: collapse;
-
   position: fixed;
   top: 50%;
   left: 25%;
