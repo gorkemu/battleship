@@ -35,12 +35,12 @@ export const Game = () => {
     return { player, ai, playerBoard, aiBoard };
   };
 
-  const startManualGame = (p1, p2, p3, p4, p5) => {
-    playerBoard.placeShip(playerCarrier, p1, "x");
-    playerBoard.placeShip(playerBattleship, p2, "x");
-    playerBoard.placeShip(playerDestroyer, p3, "x");
-    playerBoard.placeShip(playerSubmarine, p4, "x");
-    playerBoard.placeShip(playerPatrolBoat, p5, "x");
+  const startManualGame = (p1, a1, p2, a2, p3, a3, p4, a4, p5, a5) => {
+    playerBoard.placeShip(playerCarrier, p1, a1);
+    playerBoard.placeShip(playerBattleship, p2, a2);
+    playerBoard.placeShip(playerDestroyer, p3, a3);
+    playerBoard.placeShip(playerSubmarine, p4, a4);
+    playerBoard.placeShip(playerPatrolBoat, p5, a5);
     return { player, ai, playerBoard, aiBoard };
   };
 

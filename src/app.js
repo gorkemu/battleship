@@ -64,8 +64,8 @@ export function renderRandomGame() {
   }
 }
 
-export function renderManualGame(p1, p2, p3, p4, p5) {
-  const game = Game().startManualGame(p1, p2, p3, p4, p5);
+export function renderManualGame(p1, a1, p2, a2, p3, a3, p4, a4, p5, a5) {
+  const game = Game().startManualGame(p1, a1, p2, a2, p3, a3, p4, a4, p5, a5);
   const player = game.player;
   const ai = game.ai;
   const playerBoard = game.playerBoard;

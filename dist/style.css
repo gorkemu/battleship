@@ -144,8 +144,7 @@ footer img {
   vertical-align: middle;
 }
 
-#game-over-modal,
-#start-game-modal {
+#game-over-modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -171,10 +170,19 @@ footer img {
   top: 40%;
   left: 50%;
   transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 #game-over-modal-footer,
-#start-game-modal-footer {
+#start-game-modal-footer,
+#place-carrier-modal-footer,
+#place-battleship-modal-footer,
+#place-destroyer-modal-footer,
+#place-submarine-modal-footer,
+#place-patrol-boat-modal-footer {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -184,6 +192,11 @@ footer img {
   width: 100%;
 }
 
+#start-game-modal-footer {
+  gap: 20px;
+}
+
+#start-game-modal,
 #place-carrier-modal,
 #place-battleship-modal,
 #place-destroyer-modal,
@@ -194,13 +207,21 @@ footer img {
   left: 67%;
   transform: translate(-50%, -50%);
   width: 33%;
-  height: 70%;
+  height: 40%;
   background-color: #e6e2e2;
   box-shadow: 0px 0px 10px #00000033;
   border-radius: 10px;
-  padding: 20px;
+  padding: 15px;
   overflow: hidden;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#start-game-modal {
+  height: 33%;
 }
 
 #game-over-modal,

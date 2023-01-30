@@ -36,10 +36,16 @@
 
     <div id="place-carrier-modal" class="modal">
       <div id="place-carrier-modal-content" class="modal-content">
-        Select a starting point for your Carrier
+        <h1>Carrier (Length 5)</h1>
       </div>
+      <input type="radio" name="vertical-carrier" id="vertical-carrier" />
       <label for="vertical-carrier">Vertical</label>
-      <input type="checkbox" name="vertical-carrier" id="vertical-carrier" />
+      <input type="radio" name="horizontal-carrier" id="horizontal-carrier" />
+      <label for="horizontal-carrier">Horizontal</label>
+      <p>
+        First select axis then click on the starting point. If you don't select
+        axis, it will be placed horizontally
+      </p>
       <div id="place-carrier-modal-footer" class="modal-footer">
         <button id="carrier-next-btn">Next</button>
       </div>
@@ -47,14 +53,20 @@
 
     <div id="place-battleship-modal" class="modal">
       <div id="place-battleship-modal-content" class="modal-content">
-        Select a starting point for your Battleship
+        <h1>Battleship (Length 4)</h1>
       </div>
+      <input type="radio" name="vertical-battleship" id="vertical-battleship" />
       <label for="vertical-battleship">Vertical</label>
       <input
-        type="checkbox"
-        name="vertical-battleship"
-        id="vertical-battleship"
+        type="radio"
+        name="horizontal-battleship"
+        id="horizontal-battleship"
       />
+      <label for="horizontal-battleship">Horizontal</label>
+      <p>
+        First select axis then click on the starting point. If you don't select
+        axis, it will be placed horizontally
+      </p>
       <div id="place-battleship-modal-footer" class="modal-footer">
         <button id="battleship-next-btn">Next</button>
       </div>
@@ -62,14 +74,20 @@
 
     <div id="place-destroyer-modal" class="modal">
       <div id="place-destroyer-modal-content" class="modal-content">
-        Select a starting point for your Destroyer
+        <h1>Destroyer (Length 3)</h1>
       </div>
+      <input type="radio" name="vertical-destroyer" id="vertical-destroyer" />
       <label for="vertical-destroyer">Vertical</label>
       <input
-        type="checkbox"
-        name="vertical-destroyer"
-        id="vertical-destroyer"
+        type="radio"
+        name="horizontal-destroyer"
+        id="horizontal-destroyer"
       />
+      <label for="horizontal-destroyer">Horizontal</label>
+      <p>
+        First select axis then click on the starting point. If you don't select
+        axis, it will be placed horizontally
+      </p>
       <div id="place-destroyer-modal-footer" class="modal-footer">
         <button id="destroyer-next-btn">Next</button>
       </div>
@@ -77,14 +95,21 @@
 
     <div id="place-submarine-modal" class="modal">
       <div id="place-submarine-modal-content" class="modal-content">
-        Select a starting point for your Submarine
+        <h1>Submarine (Length 3)</h1>
       </div>
+      <input type="radio" name="vertical-submarine" id="vertical-submarine" />
       <label for="vertical-submarine">Vertical</label>
       <input
-        type="checkbox"
-        name="vertical-submarine"
-        id="vertical-submarine"
+        type="radio"
+        name="horizontal-submarine"
+        id="horizontal-submarine"
       />
+      <label for="horizontal-submarine">Horizontal</label>
+      <p>
+        First select axis then click on the starting point. If you don't select
+        axis, it will be placed horizontally
+      </p>
+
       <div id="place-submarine-modal-footer" class="modal-footer">
         <button id="submarine-next-btn">Next</button>
       </div>
@@ -92,14 +117,24 @@
 
     <div id="place-patrol-boat-modal" class="modal">
       <div id="place-patrol-boat-modal-content" class="modal-content">
-        Select a starting point for your Patrol Boat
+        <h1>Patrol Boat (Length 2)</h1>
       </div>
-      <label for="vertical-patrol-boat">Vertical</label>
       <input
-        type="checkbox"
+        type="radio"
         name="vertical-patrol-boat"
         id="vertical-patrol-boat"
       />
+      <label for="vertical-patrol-boat">Vertical</label>
+      <input
+        type="radio"
+        name="horizontal-patrol-boat"
+        id="horizontal-patrol-boat"
+      />
+      <label for="horizontal-patrol-boat">Horizontal</label>
+      <p>
+        First select axis then click on the starting point. If you don't select
+        axis, it will be placed horizontally
+      </p>
       <div id="place-patrol-boat-modal-footer" class="modal-footer">
         <button id="start-manual-game-btn">Start Game</button>
       </div>
