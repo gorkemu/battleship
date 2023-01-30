@@ -31,6 +31,7 @@ for (let i = 0; i < 100; i++) {
 
 startRandomGameBtn.addEventListener("click", () => {
   startGameModal.style.display = "none";
+  boardMapModal.style.display = "none";
   renderRandomGame();
 });
 
