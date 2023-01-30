@@ -82,7 +82,7 @@ header {
 }
 
 #boards::before {
-  content: "Player";
+  content: "Your Board";
   grid-column: 1;
   grid-row: 1;
   text-align: center;
@@ -95,7 +95,7 @@ header {
 }
 
 #boards::after {
-  content: "AI";
+  content: "AI's Board";
   grid-column: 2;
   grid-row: 1;
   text-align: center;
@@ -145,7 +145,7 @@ footer img {
 }
 
 #game-over-modal,
-#start-game-modal {
+#start-random-game-modal {
   position: fixed;
   top: 50%;
   left: 50%;
@@ -159,14 +159,34 @@ footer img {
   border-radius: 10px;
   padding: 20px;
   overflow: hidden;
+  z-index: 2;
+}
+
+#place-ships-modal {
+  position: fixed;
+  top: 50%;
+  left: 67%;
+  transform: translate(-50%, -50%);
+  width: 33%;
+  height: 70%;
+  background-color: #e6e2e2;
+  box-shadow: 0px 0px 10px #00000033;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+  z-index: 1;
 }
 
 #game-over-modal {
   display: none;
 }
 
+#place-ships-modal {
+  display: none;
+}
+
 #game-over-modal-content,
-#start-game-modal-content {
+#start-random-game-modal-content {
   width: 100%;
   text-align: center;
   font-size: 1.5em;
@@ -177,7 +197,7 @@ footer img {
 }
 
 #game-over-modal-footer,
-#start-game-modal-footer {
+#start-random-game-modal-footer {
   display: flex;
   justify-content: center;
   position: absolute;
@@ -188,7 +208,8 @@ footer img {
 }
 
 #game-over-modal-footer button,
-#start-game-modal-footer button {
+#start-random-game-modal-footer button,
+#place-ships-modal-footer button {
   background-color: var(--navy);
   color: #fff;
   padding: 10px 20px;
@@ -201,6 +222,28 @@ footer img {
 }
 
 #game-over-modal-footer button:hover,
-#start-game-modal-footer button:hover {
+#start-random-game-modal-footer button:hover,
+#place-ships-modal-footer button:hover {
   background-color: var(--teal);
+}
+
+input[type="number"] {
+  width: 50px;
+}
+
+#board-map-modal {
+  width: 40vw;
+  height: 40vw;
+  max-width: 400px;
+  max-height: 400px;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+  border-collapse: collapse;
+
+  position: fixed;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
 }
