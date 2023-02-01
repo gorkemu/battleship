@@ -133,6 +133,10 @@ header {
   background-color: white;
 }
 
+.ship-placed {
+background-color: var(--blue);
+}
+
 footer a {
   color: var(--green);
   text-decoration: none;
