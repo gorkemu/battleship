@@ -48,12 +48,12 @@ placeShipsBtn.addEventListener("click", () => {
         a1 = "y";
         for (let i = 0; i < 5; i++) {
           element = element.parentNode.childNodes[p1 + 10 * i];
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
         }
       } else {
         a1 = "x";
         for (let i = 0; i < 5; i++) {
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
           element = element.nextElementSibling;
         }
       }
@@ -74,12 +74,13 @@ carrierNextBtn.addEventListener("click", () => {
         a2 = "y";
         for (let i = 0; i < 4; i++) {
           element = element.parentNode.childNodes[p2 + 10 * i];
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
+
         }
       } else {
         a2 = "x";
         for (let i = 0; i < 4; i++) {
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
           element = element.nextElementSibling;
         }
       }
@@ -100,12 +101,12 @@ battleshipNextBtn.addEventListener("click", () => {
         a3 = "y";
         for (let i = 0; i < 3; i++) {
           element = element.parentNode.childNodes[p3 + 10 * i];
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
         }
       } else {
         a3 = "x";
         for (let i = 0; i < 3; i++) {
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
           element = element.nextElementSibling;
         }
       }
@@ -126,12 +127,13 @@ destroyerNextBtn.addEventListener("click", () => {
         a4 = "y";
         for (let i = 0; i < 3; i++) {
           element = element.parentNode.childNodes[p4 + 10 * i];
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
+
         }
       } else {
         a4 = "x";
         for (let i = 0; i < 3; i++) {
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
           element = element.nextElementSibling;
         }
       }
@@ -153,12 +155,13 @@ submarineNextBtn.addEventListener("click", () => {
         a5 = "y";
         for (let i = 0; i < 2; i++) {
           element = element.parentNode.childNodes[p5 + 10 * i];
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
+
         }
       } else {
         a5 = "x";
         for (let i = 0; i < 2; i++) {
-          element.style.backgroundColor = "#48a5e2";
+          element.classList.add("ship-placed");
           element = element.nextElementSibling;
         }
       }

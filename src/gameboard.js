@@ -6,9 +6,8 @@ export const Gameboard = () => {
 
   const validatePlacement = (ship, startPosition, axis) => {
     if (
-      (axis === "x" && (startPosition % 10) + ship.length <= 10) ||
-      (axis === "y" &&
-        (Math.floor(startPosition / 10) % 10) + ship.length <= 10)
+    (axis === "x" && (startPosition % 10) + ship.length <= 10) ||
+    (axis === "y" && (Math.floor(startPosition / 10) % 10) + ship.length <= 10)
     ) {
       for (let i = 0; i < ship.length; i++) {
         let position;
@@ -22,7 +21,7 @@ export const Gameboard = () => {
         }
       }
       return true;
-    }
+      }
     return false;
   };
 
@@ -73,7 +72,6 @@ export const Gameboard = () => {
     get board() {
       return board;
     },
-
     placeShip,
     placeShipRandomly,
     receiveAttack,
